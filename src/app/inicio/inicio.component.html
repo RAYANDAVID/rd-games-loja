@@ -51,68 +51,24 @@
  
   <h2>Jogos em Promoção</h2>
   <mat-grid-list cols="3">
-    <mat-grid-tile>
+    <mat-grid-tile *ngFor="let produto of produtos">
         <mat-card class="example-card">
             <img
               mat-card-image
-              src="./assets/img/jogo1.png"
-              alt="God of War"
+              src="./assets/img/{{produto.foto}}"
+              alt="Jogo 1"
             />
             <mat-card-header>
-              <mat-card-title>God of War</mat-card-title>
+              <mat-card-title>{{produto.produto}}</mat-card-title>
             </mat-card-header>
             
             <mat-card-content>
               <p>
-                Com a vingança contra os deuses do Olimpo em um passado distante...
+                {{produto.descricao}}
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <p>R$199,99</p>
-              <button mat-button>Comprar</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <img
-              mat-card-image
-              src="./assets/img/jogo2.png"
-              alt="Pes 2013"
-            />
-            <mat-card-header>
-              <mat-card-title>Pes 2013</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-              <p>
-                PES 2013 é um jogo eletrônico de futebol e a décima segunda edição da série PES.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <p>R$99,00</p>
-              <button mat-button>Comprar</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <img
-              mat-card-image
-              src="./assets/img/jogo3.png"
-              alt="PUBG"
-            />
-            <mat-card-header>
-              <mat-card-title>PUBG</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-              <p>
-                PlayerUnknown's Battlegrounds é um jogo eletrônico multiplayer.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <p>R$150,00</p>
+              <p>{{produto.preco | currency}}</p>
               <button mat-button>Comprar</button>
             </mat-card-actions>
           </mat-card>
